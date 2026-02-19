@@ -4,8 +4,7 @@ import requests
 from concurrent.futures import ThreadPoolExecutor
 
 
-api_key = os.getenv("API_KEY")  # Put your DIAL API Key here
-
+api_key = os.getenv("API_KEY").strip()  # Put your DIAL API Key here
 
 all_models = requests.get("https://ai-proxy.lab.epam.com/openai/models", headers={"Api-Key": api_key}).json()["data"]
 
